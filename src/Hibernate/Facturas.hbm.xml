@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-may-2015 11:43:36 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Facturas" table="facturas" catalog="jugueteria">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empleados" class="Hibernate.Empleados" fetch="select">
+            <column name="empleado" length="9" />
+        </many-to-one>
+        <property name="precioTotal" type="java.lang.Double">
+            <column name="precioTotal" precision="22" scale="0" />
+        </property>
+        <property name="tipoPago" type="string">
+            <column name="tipo_pago" length="100" />
+        </property>
+        <property name="productos" type="java.lang.Integer">
+            <column name="productos" />
+        </property>
+        <set name="productosfacturases" table="productosfacturas" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="idFactura" />
+            </key>
+            <one-to-many class="Hibernate.Productosfacturas" />
+        </set>
+    </class>
+</hibernate-mapping>

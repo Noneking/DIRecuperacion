@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-may-2015 11:43:36 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Empleados" table="empleados" catalog="jugueteria">
+        <id name="dni" type="string">
+            <column name="dni" length="9" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreYapellidos" type="string">
+            <column name="nombreYapellidos" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="fechaNacimiento" type="string">
+            <column name="fecha_nacimiento" length="100" />
+        </property>
+        <property name="telefono" type="java.lang.Integer">
+            <column name="telefono" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="puesto" type="string">
+            <column name="puesto" length="100" />
+        </property>
+        <set name="facturases" table="facturas" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="empleado" length="9" />
+            </key>
+            <one-to-many class="Hibernate.Facturas" />
+        </set>
+    </class>
+</hibernate-mapping>

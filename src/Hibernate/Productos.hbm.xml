@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-may-2015 11:43:36 by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Productos" table="productos" catalog="jugueteria">
+        <id name="codigo" type="java.lang.Integer">
+            <column name="codigo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fabricantes" class="Hibernate.Fabricantes" fetch="select">
+            <column name="fabricante" length="100" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="100" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+        <property name="procedencia" type="string">
+            <column name="procedencia" length="100" />
+        </property>
+        <property name="precio" type="java.lang.Double">
+            <column name="precio" precision="22" scale="0" />
+        </property>
+        <set name="productosfacturases" table="productosfacturas" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="codigoProducto" />
+            </key>
+            <one-to-many class="Hibernate.Productosfacturas" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<products>
+  <product>
+    <codigo>1</codigo>
+    <nombre>Casa Muñecas</nombre>
+    <categoria>Hogar</categoria>
+    <edad>9</edad>
+    <procedencia>Spain</procedencia>
+    <precio>50.0</precio>
+    <fabricante>Angel e hijo</fabricante>
+  </product>
+  <product>
+    <codigo>2</codigo>
+    <nombre>Action Man</nombre>
+    <categoria>Acción</categoria>
+    <edad>10</edad>
+    <procedencia>Spain</procedencia>
+    <precio>23.0</precio>
+    <fabricante>Hermanos Gómez SA</fabricante>
+  </product>
+  <product>
+    <codigo>4</codigo>
+    <nombre>zxcv</nombre>
+    <categoria>asdf</categoria>
+    <edad>54</edad>
+    <procedencia>asdf</procedencia>
+    <precio>5.0</precio>
+    <fabricante>Angel e hijo</fabricante>
+  </product>
+</products>
